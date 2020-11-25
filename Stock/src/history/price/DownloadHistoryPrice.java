@@ -6,17 +6,22 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import calbao.GetCaiBao;
+import common.DownloadFromURL;
 
-public class HistoryPrice {
+public class DownloadHistoryPrice {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		 ArrayList<String> strs = toArrayByFileReader1("s_code.txt");
 	        for(String str:strs) {
 	        	 try{
-	        		 GetCaiBao.downLoadFromUrl("http://quotes.money.163.com/service/chddata.html?code=0"+str+"&start=20001105&end=20201124&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP",
+	        		 //深市股票前面加1
+	        		 if(str.startsWith("0")|| str.startsWith("3"))
+	        			 DownloadFromURL.downLoadFromUrl("http://quotes.money.163.com/service/chddata.html?code=1"+str+"&start=20001105&end=20201124&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP",
 	                         str+"_historyprice.xls","./historyprice/");
+	        		 else //沪市股票前面加0
+	        			 DownloadFromURL.downLoadFromUrl("http://quotes.money.163.com/service/chddata.html?code=0"+str+"&start=20001105&end=20201124&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP",
+		                         str+"_historyprice.xls","./historyprice/");
 	                 Thread.sleep(100);
 	             }catch (Exception e) {
 	                 e.printStackTrace();

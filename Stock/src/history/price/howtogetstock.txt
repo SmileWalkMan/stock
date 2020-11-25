@@ -207,3 +207,5 @@ Google数据其实是从新浪获取的，所以可以优先考虑从新浪获�
 其中，自定义列可定义TCLOSE收盘价 ;HIGH最高价;LOW最低价;TOPEN开盘价;LCLOSE前收盘价;CHG涨跌额;PCHG涨跌幅;TURNOVER换手率;VOTURNOVER成交量;VATURNOVER成交金额;TCAP总市值;MCAP流通市值这些值。
 
 例如，http://quotes.money.163.com/service/chddata.html?code=0601857&start=20071105&end=20150618&fields=TCLOSE;HIGH;LOW;TOPEN;LCLOSE;CHG;PCHG;TURNOVER;VOTURNOVER;VATURNOVER;TCAP;MCAP，获取0601857从2007-11-05到2015-06-18区间的数据。
+深市股票前面加1
+上市股票前面加0

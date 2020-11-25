@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import com.csvreader.CsvReader;
 
-public class ReadCSV {
+public class AnalysisHistoryPrice {
 
 	static int satifyNum = 0;
 	static int totalNum = 0;
@@ -71,7 +71,7 @@ public class ReadCSV {
 		int total = 0;
 		int num = 0;
 		for (int i = 0; i < 2000 && i < dir.length; i++) {
-			int n = ReadCSV.fun1("historyprice/" + dir[i],3, 0.0);
+			int n = AnalysisHistoryPrice.fun1("historyprice/" + dir[i],3, 0.0);
 			total += totalNum;
 			num += satifyNum;
 		}
@@ -108,6 +108,7 @@ public class ReadCSV {
 					dateAr.add(csvReader.get(0));
 				}
 			}
+			System.out.println(filePath+":"+ar.size());
 			for(int i=0;i<ar.size()-N-1;i++) {
 				double current=ar.get(i);
 				if(current>=P) {
@@ -123,6 +124,7 @@ public class ReadCSV {
 						satifyNum++;
 					}
 				}
+//				else System.out.println(current);
 			}
 			
 
@@ -137,7 +139,7 @@ public class ReadCSV {
 		int total = 0;
 		int num = 0;
 		for (int i = 0; i < 2000 && i < dir.length; i++) {
-			int n = ReadCSV.fun2("historyprice/" + dir[i],10, 5, 5.0);
+			int n = AnalysisHistoryPrice.fun2("historyprice/" + dir[i],100, 50, 5.0);
 			total += totalNum;
 			num += satifyNum;
 		}

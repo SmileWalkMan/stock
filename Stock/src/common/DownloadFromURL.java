@@ -1,4 +1,4 @@
-package calbao;
+package common;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 //http://basic.10jqka.com.cn/api/stock/export.php?export=debt&type=year&code=300138
 //http://basic.10jqka.com.cn/api/stock/export.php?export=cash&type=year&code=300138
 //http://basic.10jqka.com.cn/api/stock/export.php?export=benefit&type=year&code=300138
-public class GetCaiBao {
+public class DownloadFromURL {
 
 	/**
      * 从网络Url中下载文件
@@ -54,10 +54,7 @@ public class GetCaiBao {
         if(inputStream!=null){
             inputStream.close();
         }
-
-
-        System.out.println("info:"+url+" download success"); 
-
+        System.out.println(fileName+":"+url+" download success"); 
     }
 
 

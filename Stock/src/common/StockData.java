@@ -1,4 +1,4 @@
-package share;
+package common;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -19,9 +19,9 @@ import java.util.ArrayList;
 //http://basic.10jqka.com.cn/api/stock/export.php?export=debt&type=year&code=300138
 //http://basic.10jqka.com.cn/api/stock/export.php?export=cash&type=year&code=300138
 //http://basic.10jqka.com.cn/api/stock/export.php?export=benefit&type=year&code=300138
-public class ShareData {
+public class StockData {
 
-	public static ArrayList<String> GetCodes(String name) {
+	public static ArrayList<String> GetStockCodes(String name) {
 		// 使用ArrayList来存储每行读取到的字符串
 		ArrayList<String> arrayList = new ArrayList<>();
 		try {

@@ -1,4 +1,4 @@
-package calbao;
+package financial.report;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,22 +7,22 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
+import common.StockData;
 import jxl.Cell;
 import jxl.CellType;
 import jxl.NumberCell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
-import share.ShareData;
 
-public class ReadXLS {
+public class AnalysisFinancialReport{
 	public static String BENEFIT="benefit";
 	public static String DEBT="debt";
 	public static String CASH="cash";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<String> Nbenifit=toArrayByFileReader1("NBenifit.txt");
-		ArrayList<String> codes = ShareData.GetCodes("s_code.txt");
+		ArrayList<String> codes = StockData.GetStockCodes("s_code.txt");
 		Collections.sort(codes);
 		int n=0;
 		for(int i=0;i<codes.size();i++) {
